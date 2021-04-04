@@ -9,12 +9,12 @@ script:
     - docker run -e CI=true jvrh/react-test npm test
 
 after_success:
-    - docker build -t jvrh/complex-client ./client
-    - docker build -t jvrh/complex-nginx ./nginx
-    - docker build -t jvrh/complex-server ./server
-    - docker build -t jvrh/complex-worker ./worker
+    - docker build -t jvrhjvrh/complex-client ./client
+    - docker build -t jvrhjvrh/complex-nginx ./nginx
+    - docker build -t jvrhjvrh/complex-server ./server
+    - docker build -t jvrhjvrh/complex-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push jvrh/complex-client
-    - docker push jvrh/complex-nginx
-    - docker push jvrh/complex-server
-    - docker push jvrh/complex-worker
+    - docker push jvrhjvrh/complex-client
+    - docker push jvrhjvrh/complex-nginx
+    - docker push jvrhjvrh/complex-server
+    - docker push jvrhjvrh/complex-worker
